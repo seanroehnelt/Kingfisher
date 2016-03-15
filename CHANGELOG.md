@@ -2,6 +2,43 @@
 
 -----
 
+## [2.1.0 - Prefetching](https://github.com/onevcat/Kingfisher/releases/tag/2.1.0) (2016-03-10)
+
+#### Add
+* Add `ImagePrefetcher` and related prefetching methods to allow downloading and caching images before you need to display them. [#249](https://github.com/onevcat/Kingfisher/pull/249)
+* A protocol (`AuthenticationChallengeResponable`) for responsing authentication challenge. You can now set `authenticationChallengeResponder` of `ImageDownloader` and use your own authentication policy. [#226](https://github.com/onevcat/Kingfisher/issues/226)
+* An API (`cachePathForKey(:)`) to get real path for a specified key in a cache. [#256](https://github.com/onevcat/Kingfisher/pull/256)
+
+#### Fix
+* Disable background decoding for images from memory cache. This improves the performance of image loading for in-memory cached images and fix a flicker when you try to load image with background decoding. [#257](https://github.com/onevcat/Kingfisher/pull/257)
+* A potential crash in `ImageCache` when an empty image is passed into.
+
+---
+
+## [2.0.4 - Sorry Pipelining](https://github.com/onevcat/Kingfisher/releases/tag/2.0.4) (2016-02-27)
+
+#### Fix
+* Make pipeling support to be disabled by default since it requiring server support. You can enable it by setting `requestsUsePipeling` in `ImageDownloader`. [#253](https://github.com/onevcat/Kingfisher/pull/253)
+* Image transition now allows user interaction. [#252](https://github.com/onevcat/Kingfisher/pull/252)
+
+---
+
+## [2.0.3 - Holiday Issues](https://github.com/onevcat/Kingfisher/releases/tag/2.0.3) (2016-02-17)
+
+#### Fix
+* A memory leak caused by retain cycle of downloader session and its delegate. [#235](https://github.com/onevcat/Kingfisher/issues/235)
+* Now the `callbackDispatchQueue` in option should be applied to `ImageDownloader` as well. [#238](https://github.com/onevcat/Kingfisher/pull/238) and [#240](https://github.com/onevcat/Kingfisher/pull/240)
+* Fix warnings when the latest version of SwiftLint is used. [#189](https://github.com/onevcat/Kingfisher/issues/189#issuecomment-185205010)
+
+---
+
+## [2.0.2 - Single Frame GIF](https://github.com/onevcat/Kingfisher/releases/tag/2.0.2) (2016-02-14)
+
+#### Fix
+* An issue which causes GIF images with only one frame failing to be loaded correctly. [#231](https://github.com/onevcat/Kingfisher/issues/231)
+
+---
+
 ## [2.0.1 - Disk is back](https://github.com/onevcat/Kingfisher/releases/tag/2.0.1) (2016-01-28)
 
 #### Fix
